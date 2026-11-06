@@ -1,0 +1,101 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-text: #1a1a1a;
+    --color-bg: #ffffff;
+    --color-accent: #2f5bea;
+    --space: 1rem;
+}
+
+body {
+    margin:0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+header, main, footer {
+    padding: var(--space);
+}
+
+main {
+    max-width:60rem;
+    margin: 0 auto;
+}
+/*Center header and footer like main content*/
+header, footer {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+/*Header: name on the left, navigation on the right*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: var(--space);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*Skip link: hidden until someone presses Tab*/
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    left: var(--space);
+    top: var(--space);
+}
+
+/*Accent color for links and the button */
+a {
+    color: var(--color-accent);
+}
+
+button {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    font: inherit;
+    cursor: pointer;
+}
+
+input {
+    font: inherit;
+    padding: 0.75rem;
+    border: 1px solid #888;
+    border-radius: 0.5rem;
+}
+
+/* a clear focus ring for keyboard users */
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;    
+}
+
+/*Features: cards that wrap automatically */
+#features ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space);
+    list-style: none;
+    padding: 0;
+}
+
+#features li {
+    border:1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: var(--space);
+}
